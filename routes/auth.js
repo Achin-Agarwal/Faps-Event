@@ -38,7 +38,7 @@ router.route("/register")
         }
         catch (err) {
             console.log(err);
-            res.status(400).json({
+            return res.status(400).json({
                 status: "error",
                 errorCode: "INVALID_DATA",
                 message: (err.errors?.length > 0 && err.errors[0].message) ? err.errors[0].message : err.message
@@ -80,7 +80,7 @@ router.route("/login")
         }
         catch (err) {
             console.log(err);
-            res.status(400).json({
+            return res.status(400).json({
                 status: "error",
                 errorCode: "INVALID_DATA",
                 message: (err.errors?.length > 0 && err.errors[0].message) ? err.errors[0].message : err.message

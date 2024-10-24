@@ -40,7 +40,7 @@ router.post('/team', async (req, res) => {
         });
     } catch (error) {
         console.error(error);
-        res.status(500).json({
+        return res.status(500).json({
             status: "error",
             errorCode: "INTERNAL_SERVER_ERROR",
             message: error.message,
@@ -69,7 +69,7 @@ router.post('/teams/:hub', checkAuth, async (req, res) => {
         })
     } catch (error) {
         console.error(error);
-        res.status(500).json({
+        return res.status(500).json({
             status: "error",
             errorCode: "INTERNAL_SERVER_ERROR",
             message: error.message,
@@ -99,7 +99,7 @@ router.route('/team/:_id')
             });
         } catch (error) {
             console.error(error);
-            res.status(500).json({
+            return res.status(500).json({
                 status: "error",
                 errorCode: "INTERNAL_SERVER_ERROR",
                 message: error.message,
@@ -169,7 +169,7 @@ router.route('/team/:_id')
             });
         } catch (error) {
             console.error(error);
-            res.status(500).json({
+            return res.status(500).json({
                 status: "error",
                 errorCode: "INTERNAL_SERVER_ERROR",
                 message: error.message,
