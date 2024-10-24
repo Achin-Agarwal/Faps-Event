@@ -49,6 +49,7 @@ router.route("/register")
 router.route("/login")
     .post(async (req, res) => {
         try {
+            console.log(req.body);
             let { username, password } = loginSchema.parse(req.body);
             username = username.trim();
             console.log(username, password);
