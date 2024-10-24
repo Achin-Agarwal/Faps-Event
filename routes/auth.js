@@ -54,6 +54,7 @@ router.route("/login")
             username = username.trim();
             console.log(username, password);
             const user = await User.findOne({ username });
+            console.log(user);
             if (!user) {
                 return res.status(400).json({
                     status: "error",
@@ -62,6 +63,7 @@ router.route("/login")
                 });
             }
             const validPassword = await bcrypt.compare(password, user.password);
+            console.log(validpassword);
             if (!validPassword) {
                 return res.status(400).json({
                     status: "error",
