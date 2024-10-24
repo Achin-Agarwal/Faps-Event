@@ -63,7 +63,8 @@ router.route("/login")
                 });
             }
             const validPassword = await bcrypt.compare(password, user.password);
-            console.log(validpassword);
+            const check=await bcrypt.hash(password, 12);
+            console.log(check);
             if (!validPassword) {
                 return res.status(400).json({
                     status: "error",
